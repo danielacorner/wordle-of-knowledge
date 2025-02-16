@@ -43,4 +43,10 @@ export const topics: TopicInfo[] = [
     description: 'Explore mental health terminology',
     icon: 'BoltIcon',
   },
+  {
+    id: 'statistical',
+    title: 'Statistics',
+    description: 'Test your knowledge of statistical concepts and methods',
+    icon: 'ChartBarIcon',
+  },
 ];

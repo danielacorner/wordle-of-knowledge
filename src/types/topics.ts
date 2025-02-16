@@ -5,7 +5,8 @@ export type TopicId =
   | 'geological'
   | 'programming'
   | 'archaeological'
-  | 'psychological';
+  | 'psychological'
+  | 'statistical';
 
 export interface TopicInfo {
   id: TopicId;

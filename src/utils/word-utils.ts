@@ -6,6 +6,7 @@ import { geologicalWords } from "@/data/words/geological";
 import { programmingWords } from "@/data/words/programming";
 import { archaeologicalWords } from "@/data/words/archaeological";
 import { psychologicalWords } from "@/data/words/psychological";
+import statisticalWords from "@/data/words/statistical";
 
 const wordLists: Record<TopicId, WordEntry[]> = {
   medical: medicalWords,
@@ -15,6 +16,7 @@ const wordLists: Record<TopicId, WordEntry[]> = {
   programming: programmingWords,
   archaeological: archaeologicalWords,
   psychological: psychologicalWords,
+  statistical: statisticalWords,
 };
 
 export const getRandomWord = (topicId: TopicId): WordEntry => {
