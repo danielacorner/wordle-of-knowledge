@@ -13,7 +13,7 @@ import { initGA, trackPageView } from "./utils/analytics";
 const queryClient = new QueryClient();
 
 // Replace with your GA4 measurement ID
-const GA_MEASUREMENT_ID = "G-5YFWS1K6GZ";
+const GA_MEASUREMENT_ID = "G-JLRJEVHR8J";
 
 // Component to track page views
 const PageViewTracker = () => {
