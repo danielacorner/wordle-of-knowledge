@@ -6,7 +6,13 @@ export type TopicId =
   | 'programming'
   | 'archaeological'
   | 'psychological'
-  | 'statistical';
+  | 'statistical'
+  | 'biology'
+  | 'physics'
+  | 'calculus'
+  | 'economics'
+  | 'literature'
+  | 'algorithms';
 
 export interface TopicInfo {
   id: TopicId;

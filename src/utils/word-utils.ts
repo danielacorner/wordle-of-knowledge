@@ -7,6 +7,12 @@ import { programmingWords } from "@/data/words/programming";
 import { archaeologicalWords } from "@/data/words/archaeological";
 import { psychologicalWords } from "@/data/words/psychological";
 import statisticalWords from "@/data/words/statistical";
+import { biologyWords } from "@/data/words/biology";
+import { physicsWords } from "@/data/words/physics";
+import { calculusWords } from "@/data/words/calculus";
+import { economicsWords } from "@/data/words/economics";
+import { literatureWords } from "@/data/words/literature";
+import { algorithmsWords } from "@/data/words/algorithms";
 
 const wordLists: Record<TopicId, WordEntry[]> = {
   medical: medicalWords,
@@ -17,6 +23,12 @@ const wordLists: Record<TopicId, WordEntry[]> = {
   archaeological: archaeologicalWords,
   psychological: psychologicalWords,
   statistical: statisticalWords,
+  biology: biologyWords,
+  physics: physicsWords,
+  calculus: calculusWords,
+  economics: economicsWords,
+  literature: literatureWords,
+  algorithms: algorithmsWords,
 };
 
 export const getRandomWord = (topicId: TopicId): WordEntry => {
