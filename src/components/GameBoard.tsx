@@ -1,5 +1,6 @@
 import { GuessResult } from "@/types/game";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 interface GameBoardProps {
   guesses: string[];
@@ -11,6 +12,7 @@ interface GameBoardProps {
 
 export const GameBoard = ({ guesses, results, currentGuess, targetLength, targetWord }: GameBoardProps) => {
   const emptyRows = 6 - guesses.length - (currentGuess ? 1 : 0);
+  const inputRef = useRef<HTMLInputElement>(null);
   
   const getBackgroundColor = (result: 'correct' | 'present' | 'absent') => {
     switch (result) {
@@ -54,7 +56,20 @@ export const GameBoard = ({ guesses, results, currentGuess, targetLength, target
   };
 
   return (
-    <div className="flex flex-col gap-2 sm:gap-3 mx-auto w-full px-1" style={{maxWidth: "min(100%, 40rem)"}}>
+    <div 
+      className="flex flex-col gap-2 sm:gap-3 mx-auto w-full px-1 relative" 
+      style={{maxWidth: "min(100%, 40rem)"}}
+      onClick={() => inputRef.current?.focus()}
+    >
+      <input
+        ref={inputRef}
+        type="text"
+        className="opacity-0 absolute h-0 w-0"
+        autoComplete="off"
+        autoCapitalize="off"
+        autoCorrect="off"
+        spellCheck="false"
+      />
       {guesses.map((guess, i) => (
         <div key={i} className="flex flex-wrap gap-0.5 sm:gap-1 justify-center">
           {targetWord.split('').map((targetLetter, j) => (
