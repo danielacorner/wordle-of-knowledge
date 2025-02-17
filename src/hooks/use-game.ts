@@ -17,13 +17,42 @@ export const useGame = () => {
 
   const [letterStates, setLetterStates] = useState<Record<string, 'correct' | 'present' | 'absent'>>({});
 
+  const initializeWithVowels = (word: string): {
+    letterStates: Record<string, 'correct' | 'present' | 'absent'>,
+    initialGuess: string,
+    initialResult: GuessResult
+  } => {
+    const vowels = ['A', 'E', 'I', 'O', 'U'];
+    const letterStates: Record<string, 'correct' | 'present' | 'absent'> = {};
+    const initialGuess = word.split('').map(letter => 
+      vowels.includes(letter) ? letter : '_'
+    ).join('');
+    
+    const initialResult = word.split('').map(letter => 
+      vowels.includes(letter) ? 'correct' as const : 'absent' as const
+    );
+    
+    word.split('').forEach((letter) => {
+      if (vowels.includes(letter)) {
+        letterStates[letter] = 'correct';
+      }
+    });
+    
+    return { letterStates, initialGuess, initialResult };
+  };
+
   const selectTopic = (topicId: TopicId) => {
     const word = getRandomWord(topicId);
+    const { letterStates: initialLetterStates, initialGuess, initialResult } = initializeWithVowels(word.word);
+    setLetterStates(initialLetterStates);
     setGameState(prev => ({
       ...prev,
       gameStatus: "playing",
       selectedTopic: topicId,
       targetWord: word,
+      currentGuess: "",
+      guesses: [initialGuess],
+      results: [initialResult],
     }));
     gameEvents.startGame();
   };
@@ -32,15 +61,16 @@ export const useGame = () => {
     if (!gameState.selectedTopic) return;
     
     const word = getRandomWord(gameState.selectedTopic);
+    const { letterStates: initialLetterStates, initialGuess, initialResult } = initializeWithVowels(word.word);
     setGameState({
       currentGuess: "",
-      guesses: [],
-      results: [],
+      guesses: [initialGuess],
+      results: [initialResult],
       gameStatus: "playing",
       selectedTopic: gameState.selectedTopic,
       targetWord: word,
     });
-    setLetterStates({});
+    setLetterStates(initialLetterStates);
     gameEvents.startGame();
   };
 
