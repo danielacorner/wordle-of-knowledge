@@ -42,7 +42,7 @@ export const HowToPlayDialog = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent>
+      <DialogContent aria-describedby="modal-modal-description" >
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold mb-4 text-primary dark:text-white/90">How To Play</DialogTitle>
         </DialogHeader>
