@@ -12,13 +12,13 @@ export const topics: TopicInfo[] = [
     id: 'chemistry',
     title: 'Chemistry Basics',
     description: 'Master fundamental chemistry concepts and nomenclature',
-    icon: 'BeakerIcon',
+    icon: 'RocketLaunchIcon',
   },
   {
     id: 'physics',
     title: 'Physics Concepts',
     description: 'Explore fundamental physics terms and principles',
-    icon: 'LightningBoltIcon',
+    icon: 'SparklesIcon',
   },
   {
     id: 'calculus',
@@ -38,7 +38,7 @@ export const topics: TopicInfo[] = [
     id: 'psychology',
     title: 'Psychology',
     description: 'Explore psychological concepts and terminology',
-    icon: 'BrainIcon',
+    icon: 'AcademicCapIcon',
   },
   {
     id: 'sociology',
@@ -98,7 +98,7 @@ export const topics: TopicInfo[] = [
     id: 'accounting',
     title: 'Accounting Basics',
     description: 'Learn fundamental accounting terms and concepts',
-    icon: 'CalculatorIcon',
+    icon: 'BanknotesIcon',
   },
   {
     id: 'marketing',
@@ -130,6 +130,6 @@ export const topics: TopicInfo[] = [
     id: 'nutrition',
     title: 'Nutrition Science',
     description: 'Study nutritional concepts and terminology',
-    icon: 'BeakerIcon',
+    icon: 'FireIcon',
   },
 ];
