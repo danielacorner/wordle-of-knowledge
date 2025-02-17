@@ -12,7 +12,7 @@ export const GameHeader = () => {
       >
         <Leaf className="w-8 h-8 text-primary dark:text-white/90" />
         <h1 className="font-playfair text-3xl font-bold text-primary dark:text-white/90">
-          Taxle
+          Studle
         </h1>
       </motion.div>
       <p className="text-primary/60 dark:text-white/90 font-sans">
